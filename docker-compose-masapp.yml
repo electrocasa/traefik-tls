@@ -5,17 +5,7 @@ networks:
     external: true
 
 services:
-  nginx:
-    image: nginx:1.13
-    networks:
-    - proxy
-    deploy:
-      replicas: 2
-      labels:
-      - traefik.frontend.rule=PathPrefixStrip:/nginx
-      - traefik.docker.network=proxy
-      - traefik.port=80
-      - traefik.enable=true
+
 
 # Using version 3 to provide play-with-docker badge
 # You can change to version 2 without breaking.
@@ -103,4 +93,4 @@ services:
 # Define named volumes so data stays in place
 volumes:
   # Volume for PostgreSQL/MySQL database
-database:
+  database:
